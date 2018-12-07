@@ -1,0 +1,5 @@
+So I got most of everything to work thanks to the help of the TA's except for some reason I was unable to have letter entered show up when it was supposed to. I tried multiple times and I think the reason is either the positioning of the function or because of its postion outside of the function. Line 95 was another attempt I tried to remedy this but I ultimately commented it out because it messed up the code. Either way this is the closest I was able to get it with it working nearly perfectly. I also realize the reset function is called randnumber. I initially was going to only use that function to reset the number but realized I could use it to reset everything after a player had either won or lost. Its an easy fix but as I've run out of time it will remain randnumber. I think thats about everything that needs explaining in my code. I would very much like to know what simple fix I could have done to make my code work 100% correctly.
+
+
+Thanks,
+Ezra

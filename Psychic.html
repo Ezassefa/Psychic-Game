@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Psychic Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+  
+</head>
+<body>
+    <h1> The Psychic Game</h1>
+
+    <p> Guess what letter I'm thinking of?</p>
+    <p id="wins-text"></p>
+    <p id="losses-text"></p>
+    <p id="userGuess-text"></p>
+    <p id="guessesLeft-text"></p>
+
+
+    <script type="text/javascript">
+
+
+    var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+    var wins = 0;
+    var losses = 0;
+    var guessesLeft = 10;
+
+    
+   var winsText = document.getElementById("wins-text");
+   var lossesText = document.getElementById("losses-text");
+   var userGuessText = document.getElementById("userGuess-text");
+   var guessesLeftText = document.getElementById("guessesLeft-text");
+
+   var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+   var lettersUsed = [] ;
+
+    function randletter() {
+        computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+        guessesLeft = 10;
+        lettersUsed = [];
+
+    };
+
+   // function clear() {
+   //     document.getElementById("userGuess-Text").textContent = "";
+   // };
+
+    document.onkeyup = function(event) {
+
+       
+
+        var userGuess = event.key;
+        
+        
+        console.log(computerGuess);
+
+        if(userGuess === computerGuess){
+        wins++;
+        randletter();
+        alert ("Nice one Psychic. You win!");
+       
+        
+       
+
+    }
+
+    else{
+        guessesLeft--;
+
+       
+    }
+
+    if(guessesLeft == 0){
+        losses++;
+        randletter();
+        alert ("You lost");
+    }
+
+        
+
+    
+
+    winsText.textContent = "wins: " + wins;
+    lossesText.textContent = "losses: " + losses;
+    userGuessText.textContent = "Your Guesses so far: " + lettersUsed;
+    guessesLeftText.textContent = "Guesses Left : " + guessesLeft;
+        
+    lettersUsed.push(userGuess);
+
+        
+
+    }
+
+   
+   // document.getElementById("Your Guesses so far: ").innerHTML = lettersUsed;
+
+    
+
+    
+
+    </script>
+</body>
+</html>
